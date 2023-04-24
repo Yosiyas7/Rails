@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 1
+  player_name: MyText
+  player_country: MyText
+  player_position: MyText
+  player_rating: 1
+  player_age: 1
+  player_stats: MyText
+
+two:
+  player_id: 1
+  player_name: MyText
+  player_country: MyText
+  player_position: MyText
+  player_rating: 1
+  player_age: 1
+  player_stats: MyText

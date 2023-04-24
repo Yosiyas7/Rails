@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Football League</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav>
+
+    <% if @current_user.present? %>
+    <%= if @current_user.admin? %>
+      <%= link_to "All users", users_path %>
+      <% end %>
+      <%= link_to "New player", new_player_path %>
+      <%= link_to "Log out #{ @current_user.email }", login_path, :method => :delete %>
+    <% else%>
+      <%= link_to "sign up!", new_user_path %>
+      <%= link_to "sign in", login_path %>
+    <% end%>
+
+  </nav>
+    <%= yield %>
+  </body>
+</html>

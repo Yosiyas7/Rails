@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manager_name: MyText
+  country: MyText
+  age: 1
+  coaching_year: 1
+
+two:
+  manager_name: MyText
+  country: MyText
+  age: 1
+  coaching_year: 1
