@@ -5,6 +5,7 @@ class CreateManagers < ActiveRecord::Migration[5.2]
       t.text :country
       t.integer :age
       t.integer :coaching_year
+      t.integer :team_id
 
       t.timestamps
     end

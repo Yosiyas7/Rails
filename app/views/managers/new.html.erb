@@ -1,0 +1,30 @@
+<h1>New Managers</h1>
+
+<form action="<%= manager_path(@manager.id) %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @manager.name %>">
+    </label>
+
+    <label>
+        country:
+        <input name="name" name="country" value="<%= @manager.country %>">
+    </label>
+
+    <label>
+        Year:
+        <input type="number" name="year" value="<%= @manager.year %>">
+    </label>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @manager.image %>">
+    </label>
+
+    <label>
+        Age:
+        <input type="number" name="age" value="<%= @manager.age%>">
+    </label>
+
+    <button>Create Manager</button>
+</form>

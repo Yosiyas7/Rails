@@ -10,53 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_21_022423) do
+ActiveRecord::Schema.define(version: 2023_04_24_071735) do
 
-    # These are extensions that must be enabled in order to support this database
-    enable_extension "plpgsql"
-  
-    create_table "teams", force: :cascade do |t|
-      t.text "name"
-      t.text "image"
-      t.text "logo"
-      t.integer "total-rating"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-  
-    create_table "players", force: :cascade do |t|
-      t.text "name"
-      t.text "country"
-      t.text "position"
-      t.integer "rating"
-      t.integer "age"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-  
-    create_table "managers", force: :cascade do |t|
-      t.text "name"
-      t.text "country"
-      t.integer "year"
-      t.integer "age"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-  
-    create_table "team-record", id: false, force: :cascade do |t|
-      t.integer "wins"
-      t.integer "losses"
-      t.integer "ties"
-      t.integer "standings"
-    end
-  
-    create_table "users", force: :cascade do |t|
-      t.text "email"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-      t.string "passwrod_digest"
-      t.boolean "admin"
-    end
-  
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "managers", force: :cascade do |t|
+    t.text "manager_name"
+    t.text "country"
+    t.integer "age"
+    t.integer "coaching_year"
+    t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-  
+
+  create_table "players", force: :cascade do |t|
+    t.integer "player_id"
+    t.text "player_name"
+    t.text "player_country"
+    t.text "player_position"
+    t.integer "player_rating"
+    t.integer "player_age"
+    t.text "player_stats"
+    t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "team_records", force: :cascade do |t|
+    t.integer "wins"
+    t.integer "losses"
+    t.integer "ties"
+    t.integer "standings"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.text "team_name"
+    t.integer "team_id"
+    t.integer "total_rating"
+    t.text "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.text "user_name"
+    t.integer "user_id"
+    t.text "user_email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+end

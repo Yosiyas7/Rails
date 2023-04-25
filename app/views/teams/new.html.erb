@@ -1,0 +1,21 @@
+<h1>New Team</h1>
+
+<form action="<%= team_path(@team.id) %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @team.name %>">
+    </label>
+
+    <label>
+        total rating:
+        <input name="name" name="total rating" value="<%= @team.totalRating %>">
+    </label>
+
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @team.image %>">
+    </label>
+
+    <button>Create Team</button>
+</form>

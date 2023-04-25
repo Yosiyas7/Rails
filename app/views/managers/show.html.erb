@@ -1,0 +1,12 @@
+<h1>
+    <%= @manager.name %>
+</h1>
+
+<%= image_tag @manager.image if @manager.image.present? %>
+
+<ul>
+    <li>Name: <%= @manager.name %></li>
+    <li>country: <%= @manager.country %></li>
+    <li>year: <%= @manager.year %></li>
+    <li>age: <%= @manager.age %></li>
+</ul>

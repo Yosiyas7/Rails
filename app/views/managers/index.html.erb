@@ -1,0 +1,7 @@
+<h1>All Managers</h1>
+
+<% @managers.each do |manager| %>
+    <p> 
+       <%= link_to manager.name, manager_path(manager.id) %>
+    </p>
+<% end %>

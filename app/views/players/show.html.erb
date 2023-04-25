@@ -1,0 +1,13 @@
+<h1>
+    <%= @player.name %>
+</h1>
+
+<%= image_tag @player.image if @player.image.present? %>
+
+<ul>
+    <li>Name: <%= @player.name %></li>
+    <li>country: <%= @player.country %></li>
+    <li>position: <%= @player.position %></li>
+    <li>rating: <%= @player.rating %></li>
+    <li>age: <%= @player.age %></li>
+</ul>

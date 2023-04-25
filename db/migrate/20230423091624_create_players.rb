@@ -8,6 +8,7 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
       t.integer :player_rating
       t.integer :player_age
       t.text :player_stats
+      t.integer :team_id
 
       t.timestamps
     end

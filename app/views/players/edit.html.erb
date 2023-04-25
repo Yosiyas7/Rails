@@ -1,0 +1,35 @@
+<h1>Edit Players</h1>
+
+<form action="<%= player_path(@player.id) %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @player.name %>">
+    </label>
+
+    <label>
+        country:
+        <input name="name" name="country" value="<%= @player.elevation %>">
+    </label>
+
+    <label>
+        position:
+        <input type="name" name="diameter" value="<%= @player.diameter %>">
+    </label>
+
+    <label>
+        Rating:
+        <input type="number" name="country" value="<%= @player.country %>">
+    </label>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @player.image %>">
+    </label>
+
+    <label>
+        Age:
+        <input type="number" name="type" value="<%= @player.type%>">
+    </label>
+
+    <button>Update Player</button>
+</form>
