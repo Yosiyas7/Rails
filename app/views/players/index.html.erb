@@ -3,6 +3,6 @@
 <% @players.each do |player| %>
     <p> 
        <%= link_to player.player_name, player_path(player.id) %>
-      <%= link_to cl_image_tag(player.image_url), player %> 
+      <%= link_to cl_image_tag(player.player_image), player %> 
     </p>
 <% end %>

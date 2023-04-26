@@ -11,16 +11,28 @@
   </head>
 
   <body>
-  <nav>
+  <nav class="navbar">
 
+<ul>
     <% if @current_user.present? %>
-    <%= link_to "New player", new_player_path %>
-    <%= link_to "Log out #{ @current_user.user_email }", login_path, :method => :delete %>
+    
+    <li><a class="active" href="#"><%= link_to "Home", home_index_path %></a></li>
+
+    <li><a href="#"><li><%= link_to "New Player", new_player_path %></a></li>
+
+    <li><a href="#"><%= link_to "All players", players_path %></a></li>
+    
+    <li><a href="#"><%= link_to "New Teams", new_team_path %></a></li>
+    
+    <li><a href="#"><%= link_to "All Teams", teams_path %></a></li>
+    
+    <li><%= link_to "Log out #{ @current_user.user_email }", login_path, :method => :delete %></li>
     <% else%>
-      <%= link_to "sign up!", new_user_path %>
-      <%= link_to "sign in", login_path %>
+      <li><%= link_to "sign up!", new_user_path %></li>
+      <li><%= link_to "sign in", login_path %></li>
     <% end%>
 
+</ul>
   </nav>
     <%= yield %>
   </body>

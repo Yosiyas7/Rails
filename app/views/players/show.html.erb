@@ -11,3 +11,9 @@
     <li>rating: <%= @player.player_rating %></li>
     <li>age: <%= @player.player_age %></li>
 </ul>
+
+
+    <div class="controls">
+        <%= link_to "Edit Player", edit_player_path(@player), :method => 'get' %>
+        <%= link_to "Delete Player", @player, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+    </div>
