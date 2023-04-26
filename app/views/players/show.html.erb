@@ -1,13 +1,13 @@
 <h1>
-    <%= @player.name %>
+    <%= @player.player_name %>
 </h1>
 
-<%= image_tag @player.image if @player.image.present? %>
+<%= cl_image_tag @player.player_image if @player.player_image.present? %>
 
 <ul>
-    <li>Name: <%= @player.name %></li>
-    <li>country: <%= @player.country %></li>
-    <li>position: <%= @player.position %></li>
-    <li>rating: <%= @player.rating %></li>
-    <li>age: <%= @player.age %></li>
+    <li>Name: <%= @player.player_name %></li>
+    <li>country: <%= @player.player_country %></li>
+    <li>position: <%= @player.player_position %></li>
+    <li>rating: <%= @player.player_rating %></li>
+    <li>age: <%= @player.player_age %></li>
 </ul>

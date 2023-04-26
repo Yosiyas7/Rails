@@ -1,6 +1,25 @@
-<h1>form coming soon</h1>
-<%= form_for @player do |f| %>
+<h1>Create Player</h1>
+<%= form_for(@player, :html => {:multipart => true }) do |f| %>
 <%= f.label :player_name %>
 <%= f.text_field :player_name %>
+
+<%= f.label :player_country %>
+<%= f.text_field :player_country %>
+
+<%= f.label :player_position %>
+<%= f.text_field :player_position %>
+
+<%= f.label :player_rating %>
+<%= f.text_field :player_rating %>
+
+<%= f.label :player_age %>
+<%= f.text_field :player_age %>
+
+<%= f.label :player_stats %>
+<%= f.text_field :player_stats %>
+
+<%= f.label :player_image %>
+<%= f.cl_image_upload :player_image %>
+
 <%= f.submit %>
 <% end %>

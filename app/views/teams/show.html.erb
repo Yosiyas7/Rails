@@ -1,10 +1,10 @@
 <h1>
-    <%= @team.name %>
+    <%= @team.team_name %>
 </h1>
 
-<%= image_tag @team.image if @team.image.present? %>
+<%= image_tag @team.logo if @team.logo.present? %>
 
 <ul>
-    <li>Name: <%= @team.name %></li>
+    <li>Name: <%= @team.team_name %></li>
     <li>total rating: <%= @team.country %></li>
 </ul>

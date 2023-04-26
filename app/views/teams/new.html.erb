@@ -3,7 +3,7 @@
 <form action="<%= team_path(@team.id) %>" method="post">
     <label>
         Name:
-        <input name="name" required value="<%= @team.name %>">
+        <input name="name" required value="<%= @team.team_name %>">
     </label>
 
     <label>
@@ -14,7 +14,7 @@
 
     <label>
         Image:
-        <input type="url" name="image" value="<%= @team.image %>">
+        <input type="url" name="image" value="<%= @team.logo %>">
     </label>
 
     <button>Create Team</button>

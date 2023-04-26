@@ -9,6 +9,11 @@ class PlayersController < ApplicationController
   
     def create
       player = Player.create player_params
+      if params[:file].present?
+        req = Cloudinary::Uploader.upload(params[:file])
+        player.player_image = req["public_id"]
+        player.save
+      end
       redirect_to player
     end
   
@@ -19,6 +24,10 @@ class PlayersController < ApplicationController
     def update
       player = Player.find params[:id]
       player.update player_params
+      if params[:file].present?
+        req = Cloudinary::Uploader.upload(params[:file])
+        player.player_image = req["public_id"]
+      end
       redirect_to player
     end
   

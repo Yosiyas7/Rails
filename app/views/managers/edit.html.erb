@@ -3,7 +3,7 @@
 <form action="<%= manager_path(@manager.id) %>" method="post">
     <label>
         Name:
-        <input name="name" required value="<%= @manager.name %>">
+        <input name="name" required value="<%= @manager.manager_name %>">
     </label>
 
     <label>
@@ -13,7 +13,7 @@
 
     <label>
         Year:
-        <input type="number" name="year" value="<%= @manager.year %>">
+        <input type="number" name="year" value="<%= @manager.coaching_year %>">
     </label>
 
     <label>

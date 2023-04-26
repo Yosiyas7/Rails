@@ -1,6 +1,14 @@
-<h1>form coming soon</h1>
+<h1>Create Team</h1>
 <%= form_for @team do |f| %>
 <%= f.label :team_name %>
 <%= f.text_field :team_name %>
+
+<%= f.label :team_rating %>
+<%= f.text_field :team_rating %>
+
+<%= f.label :team_logo %>
+<%= f.text_field :team_logo %>
+
 <%= f.submit %>
 <% end %>
+

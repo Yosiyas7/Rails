@@ -3,32 +3,32 @@
 <form action="<%= player_path(@player.id) %>" method="post">
     <label>
         Name:
-        <input name="name" required value="<%= @player.name %>">
+        <input name="name" required value="<%= @player.player_name %>">
     </label>
 
     <label>
         country:
-        <input name="name" name="country" value="<%= @player.elevation %>">
+        <input name="name" name="country" value="<%= @player.player_country %>">
     </label>
 
     <label>
         position:
-        <input type="name" name="diameter" value="<%= @player.diameter %>">
+        <input type="name" name="diameter" value="<%= @player.player_position %>">
     </label>
 
     <label>
         Rating:
-        <input type="number" name="country" value="<%= @player.country %>">
+        <input type="number" name="country" value="<%= @player.player_country %>">
     </label>
 
     <label>
         Image:
-        <input type="url" name="image" value="<%= @player.image %>">
+        <input type="url" name="image" value="<%= @player.player_image %>">
     </label>
 
     <label>
         Age:
-        <input type="number" name="type" value="<%= @player.type%>">
+        <input type="number" name="type" value="<%= @player.player_age%>">
     </label>
 
     <button>Update Player</button>
