@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :players
   resources :teams
   resources :managers
-  resources :home
  
 
   get '/login' => 'session#new'

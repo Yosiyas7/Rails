@@ -1,6 +1,16 @@
-<h1>form coming soon</h1>
-<%= form_for @manager do |f| %>
+<h1>Create Manager</h1>
+<%= form_for(@manager, :html => {:multipart => true }) do |f| %>
 <%= f.label :manager_name %>
 <%= f.text_field :manager_name %>
+
+<%= f.label :manager_country %>
+<%= f.text_field :manager_country %>
+
+<%= f.label :manager_year %>
+<%= f.text_field :manager_year %>
+
+<%= f.label :manager_age %>
+<%= f.text_field :manager_age %>
+
 <%= f.submit %>
 <% end %>
