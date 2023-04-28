@@ -1,24 +1,15 @@
-# README
+# Football Team Sheet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## My project is a user-friendly football team sheet application that allows users to create and manage their own teams, experiment with different player combinations and formations, access important player statistics, and share their team sheets with others for community engagement and collaboration.
 
-Things you may want to cover:
+## How to use my awesome project.
+### Download instructions (if relevant):
+### $ git clone my-awesome-app
+### $ cd my-awesome-app
+### $ node app.js
 
-* Ruby version
+## Techs used
+### Ruails
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Bugs to fix
+### The Images for players and managers isn't working
