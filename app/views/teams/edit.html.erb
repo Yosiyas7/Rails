@@ -1,20 +1,2 @@
 <h1>Edit Team</h1>
-
-<form action="<%= team_path(@team.id) %>" method="post">
-    <label>
-        Name:
-        <input name="name" required value="<%= @team.team_name %>">
-    </label>
-
-    <label>
-        total rating:
-        <input name="name" name="total rating" value="<%= @team.totalRating %>">
-    </label>
-
-    <label>
-        Image:
-        <input type="url" name="image" value="<%= @team.logo %>">
-    </label>
-
-    <button>Edit Team</button>
-</form>
+<%= render :partial => 'form' %>

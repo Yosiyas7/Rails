@@ -8,13 +8,15 @@ class PlayersController < ApplicationController
     end
   
     def create
-      player = Player.create player_params
-      if params[:file].present?
-        req = Cloudinary::Uploader.upload(params[:file])
-        player.player_image = req["public_id"]
-        player.save
-      end
-      redirect_to player
+        @player = Player.new(player_params)
+        team = Team.find_by(team_name: params[:player][:team_name]) # find the team based on its name
+        # @player.team_id = team.id # assign the id of the found team to the player's team_id
+      
+        if @player.save
+          redirect_to @player
+        else
+          render :new
+        end
     end
   
     def edit
@@ -43,6 +45,6 @@ class PlayersController < ApplicationController
   
     private
         def player_params
-          params.require(:player).permit(:player_name, :player_country, :player_position, :player_rating, :player_age, :image)
+          params.require(:player).permit(:player_name, :player_country, :player_position, :player_rating, :player_age, :image, :team_id, :team_name)
         end
   end

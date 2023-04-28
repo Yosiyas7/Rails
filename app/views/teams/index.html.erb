@@ -1,7 +1,12 @@
 <h1>All Teams</h1>
 
-<% @teams.each do |team| %>
-    <p class="team"> 
-       <%= link_to team.team_name, team_path(team.id) %>
-    </p>
-<% end %>
+<div class="team-list">
+  <% @teams.each do |team| %>
+    <div class="team-member">
+      <%= link_to team_path(team.id) do %>
+        <%= cl_image_tag(team.logo, class: "team-image") %>
+        <div class="team-member-name"><%= team.team_name %></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

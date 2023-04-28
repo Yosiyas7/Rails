@@ -23,8 +23,9 @@ class TeamsController < ApplicationController
     end
   
     def show
-      @team = Team.find params[:id]
-    end
+        @team = Team.find(params[:id])
+        @players = @team.players
+      end
   
     def destroy
     team = Team.find params[:id]
@@ -34,6 +35,7 @@ class TeamsController < ApplicationController
   
     private
         def team_params
-          params.require(:team).permit(:team_name, :team_country, :team_rating, :image)
+          params.require(:team).permit(:team_name, :total_rating, :logo)
         end
+
   end

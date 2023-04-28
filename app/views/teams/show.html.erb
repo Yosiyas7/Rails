@@ -1,16 +1,30 @@
 <h1>
     <%= @team.team_name %>
 </h1>
+<div class="team-all">
+    <div class="team-card">
+    <div class="team-image">
+        <%= cl_image_tag @team.logo if @team.logo.present? %>
 
-<%= image_tag @team.logo if @team.logo.present? %>
-
-<ul>
-    <li>Name: <%= @team.team_name %></li>
-    <li>Total Rating: <%= @team.total_rating %></li>
+        <div class="team-info">
+            <ul>
+                <li>Name: <%= @team.team_name %></li>
+                <li>Total Rating: <%= @team.total_rating %></li>
+            </ul>
+        </div>
+    </div>
+        <div class="controls">
+            <%= link_to "Edit Team", edit_team_path(@team), :method => 'get' %>
+            <%= link_to "Delete Team", @team, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+        </div>
+    </div>
+</div>
+<h2>Players:</h2>
+<ul class="players">
+  <% @team.players.each do |player| %>
+    <li>
+      <%= player.player_name %> (<%= player.player_position %>) - Rating: <%= player.player_rating %>
+    </li>
+  <% end %>
 </ul>
 
-
-    <div class="controls">
-        <%= link_to "Edit Team", edit_team_path(@team), :method => 'get' %>
-        <%= link_to "Delete Team", @team, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
-    </div>

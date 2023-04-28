@@ -1,9 +1,10 @@
 <h1>All Players</h1>
 
 <div class="players-list">
-<% @players.each do |player| %>
-    <p> 
-       <%= link_to player.player_name, player_path(player.id) %>
-      <%= link_to cl_image_tag(player.player_image), player %> 
-    </p>
-<% end %>
+    <% @players.each do |player| %>
+        <p> 
+            <%= link_to player.player_name, player_path(player.id) %>
+            <%= link_to image_tag(player.player_image), player %> 
+        </p>
+    <% end %>
+</div>

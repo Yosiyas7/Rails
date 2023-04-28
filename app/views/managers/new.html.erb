@@ -1,6 +1,6 @@
 <h1>New Managers</h1>
 
-<form action="<%= manager_path(@manager.id) %>" method="post">
+<form action="<%= managers_path(@manager.id) %>" method="post">
     <label>
         Name:
         <input name="name" required value="<%= @manager.manager_name %>">
@@ -16,10 +16,7 @@
         <input type="number" name="year" value="<%= @manager.coaching_year %>">
     </label>
 
-    <label>
-        Image:
-        <input type="url" name="image" value="<%= @manager.image %>">
-    </label>
+   
 
     <label>
         Age:

@@ -1,25 +1,44 @@
 <h1>Create Player</h1>
 <%= form_for(@player, :html => {:multipart => true }) do |f| %>
-<%= f.label :player_name %>
-<%= f.text_field :player_name %>
+  <div class="form-group">
+    <%= f.label :player_name %>
+    <%= f.text_field :player_name, class: "form-control" %>
+  </div>
 
-<%= f.label :player_country %>
-<%= f.text_field :player_country %>
+  <div class="form-group">
+    <%= f.label :player_country %>
+    <%= f.text_field :player_country, class: "form-control" %>
+  </div>
 
-<%= f.label :player_position %>
-<%= f.text_field :player_position %>
+  <div class="form-group">
+    <%= f.label :player_position %>
+    <%= f.text_field :player_position, class: "form-control" %>
+  </div>
 
-<%= f.label :player_rating %>
-<%= f.text_field :player_rating %>
+  <div class="form-group">
+    <%= f.label :player_rating %>
+    <%= f.text_field :player_rating, class: "form-control" %>
+  </div>
 
-<%= f.label :player_age %>
-<%= f.text_field :player_age %>
+  <div class="form-group">
+    <%= f.label :player_age %>
+    <%= f.text_field :player_age, class: "form-control" %>
+  </div>
 
-<%= f.label :player_stats %>
-<%= f.text_field :player_stats %>
+  <div class="form-group">
+    <%= f.label :player_stats %>
+    <%= f.text_field :player_stats, class: "form-control" %>
+  </div>
 
-<%= f.label :player_image %>
-<%= f.cl_image_upload :player_image %>
+  <div class="form-group">
+    <%= f.label :player_image %>
+    <%= f.cl_image_upload :player_image, class: "form-control" %>
+  </div>
 
-<%= f.submit %>
+  <div class="form-group">
+    <%= f.label :team_name %>
+    <%= f.select :team_id, Team.pluck(:team_name, :id), { :include_blank => true }, { class: "form-control" } %>
+  </div>
+
+  <%= f.submit "Create", class: "cl" %>
 <% end %>

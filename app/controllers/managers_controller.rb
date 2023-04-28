@@ -8,8 +8,15 @@ class ManagersController < ApplicationController
     end
   
     def create
-      manager = Manager.create manager_params
-      redirect_to manager
+        @manager = Manager.new(manager_params)
+        team = Team.find_by(team_name: params[:manager][:team_name]) # find the team based on its name
+        @manager.team_id = team.id # assign the id of the found team to the manager's team_id
+      
+        if @manager.save
+          redirect_to @manager
+        else
+          render :new
+        end
     end
   
     def edit
@@ -34,6 +41,6 @@ class ManagersController < ApplicationController
   
     private
         def manager_params
-          params.require(:manager).permit(:manager_name, :manager_country, :manager_year, :manager_age, :image)
+          params.require(:manager).permit(:manager_name, :country, :coaching_year, :age)
         end
   end
