@@ -1,21 +1,2 @@
-<h1>New Team</h1>
-
-<form action="<%= teams_path(@team.id) %>" method="post">
-    <label>
-        Name:
-        <input name="name" required value="<%= @team.team_name %>">
-    </label>
-
-    <label>
-        total rating:
-        <input name="name" name="total rating" value="<%= @team.total_rating %>">
-    </label>
-
-
-    <label>
-        Image:
-        <input type="url" name="image" value="<%= @team.logo %>">
-    </label>
-
-    <button>Create Team</button>
-</form>
+<h1>New Teams</h1>
+<%= render :partial => 'form' %>

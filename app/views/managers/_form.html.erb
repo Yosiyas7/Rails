@@ -3,14 +3,14 @@
 <%= f.label :manager_name %>
 <%= f.text_field :manager_name %>
 
-<%= f.label :manager_country %>
-<%= f.text_field :manager_country %>
+<%= f.label :country %>
+<%= f.text_field :country %>
 
-<%= f.label :manager_year %>
-<%= f.text_field :manager_year %>
+<%= f.label :coaching_year %>
+<%= f.text_field :coaching_year %>
 
-<%= f.label :manager_age %>
-<%= f.text_field :manager_age %>
+<%= f.label :age %>
+<%= f.text_field :age %>
 
 <%= f.label :team_name %>
  <%= f.select :team_id, Team.pluck(:team_name, :id), :include_blank => true %>

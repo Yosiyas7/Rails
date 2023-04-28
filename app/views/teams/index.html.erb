@@ -4,7 +4,7 @@
   <% @teams.each do |team| %>
     <div class="team-member">
       <%= link_to team_path(team.id) do %>
-        <%= cl_image_tag(team.logo, class: "team-image") %>
+        <%= image_tag(team.logo, class: "team-image") %>
         <div class="team-member-name"><%= team.team_name %></div>
       <% end %>
     </div>

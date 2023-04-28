@@ -1,27 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Info</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<h1>
+    <%= @player.player_name %>
+</h1>
 <div class="players-all">
     <div class="player-card">
         <div class="player-image">
-            <%= cl_image_tag @player.player_image if @player.player_image.present? %>
+            <%= image_tag @player.player_image if @player.player_image.present? %>
         </div>
         <h1 class="player-name">
             <%= @player.player_name %>
         </h1>
-        <ul class="player-info">
+        <div class="player-info">
             <li>Name: <%= @player.player_name %></li>
             <li>Country: <%= @player.player_country %></li>
             <li>Position: <%= @player.player_position %></li>
             <li>Rating: <%= @player.player_rating %></li>
             <li>Age: <%= @player.player_age %></li>
-        </ul>
+        </div>
         <div class="controls">
             <%= link_to "Edit Player", edit_player_path(@player), :method => 'get' %>
             <%= link_to "Delete Player", @player, :method => :delete, :data => { :confirm => 'Are you sure?' } %>

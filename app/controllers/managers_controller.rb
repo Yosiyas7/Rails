@@ -10,7 +10,7 @@ class ManagersController < ApplicationController
     def create
         @manager = Manager.new(manager_params)
         team = Team.find_by(team_name: params[:manager][:team_name]) # find the team based on its name
-        @manager.team_id = team.id # assign the id of the found team to the manager's team_id
+        # @manager.team_id = team.id # assign the id of the found team to the manager's team_id
       
         if @manager.save
           redirect_to @manager
@@ -30,7 +30,7 @@ class ManagersController < ApplicationController
     end
   
     def show
-      @manager = manager.find params[:id]
+      @manager = Manager.find params[:id]
     end
   
     def destroy
